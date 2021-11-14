@@ -1,0 +1,45 @@
+/*This all styles work for whole site*/
+
+body {
+    margin: 0;
+}
+
+.wrapper {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 400;
+}
+
+.__container1110 {
+    width: 1100px;
+}
+
+/* This is about the section's titl or section's heading. */
+.title{
+    color: rgb(255, 255, 255);
+    font-size: 36px;
+    text-align: center;
+    text-shadow: 0px 4px 0px black;
+}
+.effect{
+    text-align: center;
+    font-size: 72px;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    color: rgb(44, 44, 44);
+    text-shadow: 0px 4px 0px black;
+    margin-top: -120px;
+}
+/* This style creates the line below the title. */
+.title::after{
+    content: '';
+    width: 200px;
+    height:2px;
+    background: limegreen;
+    display: block;
+    margin: 20px auto;
+}
+/* This allows to title and line be above the title effect. */
+.title, .title::after{
+    margin-top: 20px;
+    z-index: 1;
+}

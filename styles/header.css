@@ -1,38 +1,25 @@
-@font-face {
-    font-family: 'HelveticaNeueCyr';
-    src: url('../fonts/HelveticaNeueCyr-Roman.woff2') format('woff2'),
-        url('../fonts/HelveticaNeueCyr-Roman.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-body {
-    margin: 0;
-}
-.wrapper {
-    font-family: 'HelveticaNeueCyr';
-   
-}
-
-.__container1110 {
-    width: 1100px;
-    
-    
-}
 .header {
     display: flex;
     justify-content: space-between;
-    max-height: 90px;
-    position: fixed;
+    align-items: center;
+    vertical-align: middle;
+    height: 90px;
+    position: absolute;
     left: 50%;
     transform: translate(-50%);
-    
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 .header__logo {
     color: #34C759;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-size: 20px;
 }
 .logo__icon {
-    padding: auto;
+margin-right: 10px;
 }
 .header_nav {
 }
@@ -46,60 +33,14 @@ body {
     text-decoration: none;
     list-style: none;
     color: white;
-    font-family: 'HelveticaNeueCyr';
+    font-family:  Helvetica, Arial, sans-serif;
+    text-transform: capitalize;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 500;
 }
-
-.landing {
-    background-image: url(../img/header_icon/placeholder.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: rgba(255, 255, 255, 1);
-    height: 1080px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-}
-.landing__hedling {
-    font-size: 72px;
-    line-height: 84px;
-    text-align: center;
-    font-weight: 700;
-}
-.bolder {
-    font-weight: 900;
-}
-.subhedling {
-    font-size: 16px;
-    line-height: 26px;
-    margin-bottom: 40px;
-}
-.button {
-    background-color: #34C759;
-    padding: 25px 58px;
-    color: black;
-    border-radius: 43px;
-    font-weight: 700;
-    margin-bottom: 70px;
-}
-.landing__row {
-    display: flex;
-    gap: 90px;
-}
-.row__item {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-   
-}
-.item__img {
-    margin-bottom: 16px;
-}
-.item__text {
-    margin-bottom: 16px;
-}
-.item__subtext {
+.links-list__link:hover
+{
+    color: #34C759;
+    transition: 0.4s;
 }
