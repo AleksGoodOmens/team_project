@@ -1,0 +1,461 @@
+/* 
+==========================
+This section can be deleted.
+==========================
+*/
+
+/* 
+{
+    color: rgb(0, 0, 0);
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+*/
+body,
+ul,
+li,
+p,
+a {
+    margin: 0px;
+    padding: 0px;
+    font-size: 16px;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+body {
+    position: relative;
+    padding:0 auto;
+    margin:-20px auto;
+    align-items: center;
+    background-color: rgb(37, 37, 37);
+
+}
+img{
+    width: 100%;
+}
+
+div {
+    margin: 0px;
+    border: 2px solid turquoise;
+}
+
+/* 
+==========================
+This section style actually
+starts here.
+==========================
+ */
+/*
+==========================
+This is the menu style.
+==========================
+*/
+
+.header{
+    z-index: 1000;
+    position: fixed;
+    
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: space-between;
+    align-items: center;
+
+    border: 2px solid   lightblue;
+    
+    width: 100%;
+}
+.logo{
+    max-width: 25px;
+    background-color: #8bd3fd;
+    min-height: 20px;
+    padding: 20px;
+}
+.mobile-nav-toggle{
+    display: none;
+}
+.nav{
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(1rem);
+
+    list-style: none;
+    display: flex;
+    padding-right: 20px;
+}
+
+.nav a{
+    color: #ffffff;
+    padding-left: 20px;
+}
+.nav a > [aria-hidden="true"] {
+    font-weight: 700;
+    margin-inline-end: 0.5rem;
+    
+    &:hover{
+        background-color: #8bd3fd;
+    color: #fff;
+    }
+}
+
+/*
+==========================
+This is for mouse hover.
+==========================
+*/
+.logo:hover{
+    opacity: 1;
+    transform: scale(1.5);
+}
+/*
+.nav a:hover {
+    background-color: #8bd3fd;
+    color: #fff;
+}
+*/
+@media(max-width: 35em){
+    .nav{
+        height: 100vh;
+        --gap: 2em;
+        inset: 0 0 0 60%;
+
+        flex-direction: column;
+
+        padding: min(30vh, 10rem) 2em;
+        
+    }
+    .mobile-nav-toggle{
+        display: block;
+        position: absolute;
+        z-index: 9999;
+        background-color: red;
+        border: 0;
+        width: 2rem;
+        aspect-ratio: 1;
+        top: 2rem;
+        right: 2rem;
+    }
+}
+/*
+========================== 
+Add a color to the active
+or current link
+==========================
+*/
+.topnav a.active {
+    background-color: #8bd3fd;
+    color: white;
+}
+/*
+==========================
+This is the menu style.
+==========================
+*/
+
+.home {
+    padding-top: 20px ;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+
+    display: grid; 1.5rem 1fr 1.5rem;
+    grid-gap: 5px;
+    
+    margin: 0 auto;
+    transition: .2s;
+}
+
+h1{
+    text-align: center;
+    padding-top: 100px;
+    margin-top: 100px;
+}
+
+h1::after{
+    content: '/';
+    width: 200px;
+    height: 2px;
+    background: limegreen;
+    display: block;
+    margin: 20px auto;
+}
+
+.section {
+    padding-top: 20px;
+    justify-content: center;
+    background-color: rgb(68, 247, 9);
+    height: auto;
+    
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 50 auto;
+
+    padding-bottom: 40px;
+    align-items: center;
+    grid-template-areas: 
+    "title"
+    "effect"
+    "effect::after"
+    "collection";
+}
+/* 
+===========================
+This is the section's title
+or section's heading.
+===========================
+*/
+.title {
+    color: rgb(255, 255, 255);
+    font-size: 36px;
+    text-align: center;
+    text-shadow: 0px 4px 0px black;
+}
+.effect {
+    text-align: center;
+    font-size: 72px;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    color: rgb(44, 44, 44);
+    text-shadow: 0px 4px 0px rgb(218, 25, 25);
+    margin-top: -120px;
+}
+.title::after {
+    content: '';
+    max-width: 200px;
+    height:2px;
+    background: limegreen;
+    display: block;
+    margin: 20px auto;
+}
+.title, .title::after {
+    margin-top: 20px;
+}
+/*
+==========================
+This section will define a grip
+and grip gap between cards.
+==========================
+*/
+
+.collection {
+    margin-top: 20px;
+    justify-content: center;
+
+    display: grid;
+    grid-template-columns:repeat(3, 1fr) ;
+    grid-template-rows: repeat(2, 1fr );
+
+    grid-gap: 2px;
+    
+    margin: 0 auto;
+}
+
+/*
+==========================
+This section is all cards style.
+==========================
+*/
+
+.card {
+    background-color: blue;
+    width: 80%;
+    margin: 0 auto;
+    flex-direction: column;
+    max-width: 300px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 2em ;
+    grid-template-areas: 
+    "name"
+    "image"
+    "description"
+    "order";
+}
+.card-name{ grid-area: name;}
+.card-img{  grid-area: image;}
+.text   {   grid-area: description;}
+.order  {   grid-area: order;}
+
+.card h3{
+    height: 20px;
+    color: #c40c0c;
+}
+
+.figure{
+
+    object-fit:cover;
+    object-position: 50%;
+    
+
+}
+
+
+/*
+==========================
+This section will
+make it responsive.
+==========================
+*/
+
+@media (max-width: 600px){
+    .section {
+        max-height: 100%;
+        max-width: 100%;
+        align-items: center;
+    }
+    .title, .effect, .title::after {
+        display: inline-block;
+        text-align: center;
+        align-items: center;
+    }
+    .collection {
+        grid-template-columns: 1fr;
+
+        align-items: center;
+        height: 450px;
+        width: 350px;
+
+        display: flex;
+        justify-content: flex-start;
+        overflow-x: scroll;
+    }
+    .collection > div{
+        flex: 1 0 200px;
+        margin: 0 10px;
+    }
+    .card {
+        margin-top: 10px;
+        align-items: center;
+        height: 400px;
+    }
+}
+
+/*
+==========================
+This section will
+make it the mouse hover animation.
+==========================
+*/
+.card:hover,
+.card:focus {
+    transform: scale(1.1);
+
+    background-color: rgb(226, 17, 17);
+    box-shadow: 
+        0px 5px 5px 0px rgba(0,0,0,.6),
+        0px 30px 30px 0px rgba(0,0,0,.1);
+    z-index: 1;
+}
+/*
+==========================
+This is text style inside
+of this section.
+==========================
+*/
+
+.section h2, h3, p, .rating {
+    margin: 10px 20px;
+}
+
+.card h3, p {
+    color: rgb(255, 255, 255);
+    font-size: .6 rem;
+    line-height: 16px;
+    letter-spacing: -0.16px;
+    display: block;
+}
+.section h2 {
+    font-size: 1.2rem;
+    text-shadow: 0px 15px 5px 20px rgb(248, 4, 4);
+}
+.section h3 {
+    font-weight: lighter;
+    font-size: .9rem;
+}
+
+/*
+==========================
+This code are to add stars.
+==========================
+*/
+
+@import url(https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css);
+
+.rating {
+    display: grid;
+    grid-template-columns: 3fr 1fr 2fr;
+    grid-gap: 5px;
+    text-align: center;
+    align-items: center;
+    font-size: 10px;
+    align-self: end;
+}
+
+/*
+==========================
+This will hide the input
+original style.
+==========================
+*/
+.rating input {
+    display: none;
+}
+.rating label {
+    display: inline-grid;
+    grid-template-columns: repeat(5 1fr);
+    cursor: pointer;
+}
+label.star:hover, {
+    color: white;
+}
+label.star:before {
+    color: grey;
+    margin: 3px;
+    content: '\f005';
+    font-family: fontAwesome;
+    font-size: .9rem;
+    position: relative;
+    display: block;
+}
+
+input.star:checked ~ label.star:before {
+    color: yellow;
+}
+.numberReviews {
+    margin: 0;
+    grid-column: 2;
+    font-size: .9rem;
+}
+/*
+==========================
+This is the button style.
+==========================
+*/
+.order {
+    display: block;
+    grid-column: 3;
+
+    max-width: 6rem;
+    aspect-ratio: 4;
+    top: 2rem;
+    right: 2rem;
+    border: 1px solid #4d4d4d;
+    border-radius: 50px;
+
+    font-size: .6rem;
+    color: #4d4d4d;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+   
+    background-color: #252525;
+}
+.order:hover,
+.order:focus {
+    color: #ffffff;
+    background-color: limegreen;
+    border: 1px solid rgb(18, 150, 57);
+    cursor: pointer;
+
+}
